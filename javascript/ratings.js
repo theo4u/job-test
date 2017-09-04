@@ -48,7 +48,7 @@ module.exports = (books, sort_order) => {
             
             
             nSortedBooks.forEach((book)=>{
-                if(author_rating_avg[book.author] == undefined){
+                if(author_rating_avg[book.author] === undefined){
                     author_rating_avg[book.author] = 0;
                     occurrence[book.author] = 0;
                 }
