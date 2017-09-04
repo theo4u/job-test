@@ -33,6 +33,10 @@ module.exports = (books, sort_order) => {
         /**
          * accepts an integer nth and returns an Array of objects with name of author
          * as keys and their average ratings as values
+         *
+         * it first of all get the nth sorted books and then check for each author to calculate their
+         * average rating
+         *
          * @param n
          * @return {{}}
          */
