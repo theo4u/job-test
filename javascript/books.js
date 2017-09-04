@@ -59,6 +59,6 @@ const books = [
     category: 'crime',
     ratings: 3.8
   },
-]
+];
 
-module.exports = books
+module.exports = books;
