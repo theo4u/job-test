@@ -30,6 +30,7 @@ module.exports = (books, sort_order) => {
         getTopBooks: (n) => {
             return sortedBooks.slice(0, n);
         },
+        
         /**
          * accepts an integer nth and returns an Array of objects with name of author
          * as keys and their average ratings as values
@@ -41,7 +42,27 @@ module.exports = (books, sort_order) => {
          * @return {{}}
          */
         getTopAuthors: (n) => {
-            return {};
+            let nSortedBooks = sortedBooks.slice(0, n);
+            let author_rating_avg = {};
+            let occurrence = {};
+            
+            
+            nSortedBooks.forEach((book)=>{
+                if(author_rating_avg[book.author] == undefined){
+                    author_rating_avg[book.author] = 0;
+                    occurrence[book.author] = 0;
+                }
+                 
+                author_rating_avg[book.author] += book.ratings;//summation of author's ratings
+                occurrence[book.author] += 1; //this is to get the occurrence of each author
+            });
+            
+            //now we get the average for each author
+            for(let author in author_rating_avg){
+                author_rating_avg[author] = author_rating_avg[author] /  occurrence[author];
+            };
+            
+            return author_rating_avg;
         }
     }
 };
