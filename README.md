@@ -6,7 +6,7 @@ You will notice that the files in this repo are using some ES6 flavoured JavaScr
 That means that you can test your code in the node console, for example, to run `callback.js` you can do:
 
 ```
-node javascript/callback.js
+node javascript/callbacks.js
 ```
 
 which for now (until you finish it) will just print `Results: undefined` to the console.
